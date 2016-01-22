@@ -10,7 +10,7 @@ import sys
 name = 'python3-django-user-roles'
 package = 'userroles'
 description = 'Simple role-based user permissions for Django.'
-url = 'http://github.com/heyitsjames/python3-django-user-roles'
+url = 'http://github.com/heyitsjames/django-user-roles'
 author = 'Tom Christie'
 email = 'tom@tomchristie.com'
 license = 'BSD'
