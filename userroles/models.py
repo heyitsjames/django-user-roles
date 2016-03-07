@@ -1,10 +1,10 @@
-from django.contrib.auth.models import User
+from django.conf import settings
 from django.db import models
 from userroles import roles
 
 
 class UserRole(models.Model):
-    user = models.OneToOneField(User, related_name='role')
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, related_name='role')
     name = models.CharField(max_length=100, choices=roles.choices)
     child = models.CharField(max_length=100, blank=True)
     _valid_roles = roles
@@ -25,7 +25,7 @@ class UserRole(models.Model):
                 return self == role
 
         raise AttributeError("'%s' object has no attribute '%s'" %
-                              (self.__class__.__name__, name))
+                             (self.__class__.__name__, name))
 
     def __unicode__(self):
         return self.name
